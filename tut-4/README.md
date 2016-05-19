@@ -1,4 +1,4 @@
-# Creating a cython wrapper class with nully constructor.
+# Creating a cython wrapper class winthout nully constructor
 
 
 "except +" : If the C++ code or the initial memory allocation raises an exception due to failure, this
