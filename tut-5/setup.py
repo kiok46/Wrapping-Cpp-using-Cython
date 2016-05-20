@@ -1,8 +1,16 @@
 from distutils.core import setup
 from Cython.Build import cythonize
+from distutils.extension import Extension
+from Cython.Distutils import build_ext
 
-setup(ext_modules = cythonize(
-           "cFoo.pyx",                 # our Cython source
-           sources=["Foo.cpp"],        # additional source file(s)
-           language="c++",             # generate C++ code
-      ))
+
+ext_modules = [Extension("test",
+               ["cpptest.pyx", "test.cpp"],
+               language = "c++",
+               )]
+
+setup(
+    name = "test_",
+    cmdclass = {'build_ext': build_ext},
+    ext_modules = ext_modules
+    )
